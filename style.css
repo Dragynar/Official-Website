@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: cyan; /* Main background in teal */
+    background-color: rgb(112, 255, 255); /* Main background in teal */
     color: black; /* Black font for readability */
     height: 100vh;
     display: flex;
