@@ -4,37 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragynar - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .countdown {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ff5722;
+        }
+
+        .sustainability {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #00796b;
+        }
+
+        input[type="email"] {
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
 </head>
 <body>
-    <div id="particles-js"></div>
     <div class="container">
-        <div class="logo">
-            <img src="images/logo.png" alt="Dragynar Logo">
+        <!-- Dragynar Logo -->
+        <img src="DragynarLogo.jpg" alt="Dragynar Logo">
+
+        <!-- Coming Soon Message -->
+        <h1>Coming Soon!</h1>
+        <p>Empowering Sustainable Blockchain Solutions</p>
+        <p>Zcash Mining & Cardano Staking</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            Time until launch: <span id="countdown"></span>
         </div>
-        <div class="card">
-            <h1>Coming Soon!</h1>
-            <p>Empowering Sustainable Blockchain Solutions</p>
-            <p>Zcash Mining & Cardano Staking</p>
+
+        <!-- Email Signup -->
+        <p>Enter your email to stay updated:</p>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="notifyMe()">Notify Me</button>
+
+        <!-- Sustainability Metrics -->
+        <div class="sustainability">
+            <p>⚡ Powered by 85% Renewable Energy</p>
+            <p>🌍 Carbon Offset: 20 Tons This Year</p>
         </div>
-        <div id="countdown" class="countdown"></div>
-        <div class="email-form">
-            <input type="email" class="email-input" id="email" placeholder="Enter your email to stay updated">
-            <span id="error-message"></span>
-            <button class="notify-btn">Notify Me</button>
-        </div>
-        <div class="metrics">
-            <h3>Sustainability Metrics</h3>
-            <p>⚡ Powered by <span id="renewable-percentage">85</span>% Renewable Energy</p>
-            <p>🌍 Carbon Offset: <span id="carbon-offset">20</span> Tons This Year</p>
-        </div>
-        <button onclick="toggleDarkMode()" class="dark-mode-toggle">Toggle Dark Mode</button>
-        <footer>
-            © 2024 Dragynar. All rights reserved.
-        </footer>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Countdown Timer Functionality
+        const countdownElement = document.getElementById('countdown');
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 8); // 8 days from today
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = launchDate - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Notify Me Button
+        function notifyMe() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert(`Thank you for subscribing! We'll notify you at ${email}.`);
+            } else {
+                alert('Please enter a valid email.');
+            }
+        }
+    </script>
 </body>
 </html>
+
