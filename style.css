@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: hsl(180, 100%, 50%); /* A lighter cyan shade using HSL */
+    background-color: hsl(180, 100%, 44%); /* A lighter cyan shade using HSL */
     color: black; /* Black font for readability */
     height: 100vh;
     display: flex;
@@ -30,25 +30,18 @@ body {
 
 /* Logo Box */
 .logo-box {
-    background-color: white; /* White box for logo contrast */
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
-    width: 200px; /* Set smaller fixed width */
-    height: 200px; /* Set smaller fixed height */
-}
-
-.logo-box:hover {
-    transform: scale(1.05); /* Subtle hover effect for the logo box */
+    width: 350px; /* Increased fixed width */
+    height: 350px; /* Increased fixed height */
+    overflow: hidden; /* Ensure any overflow is hidden */
 }
 
 .logo {
-    max-width: 100%; /* Ensure logo fits inside the box */
-    max-height: 100%; /* Limit height to the box */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Maintain aspect ratio while fitting inside */
 }
 
@@ -64,7 +57,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%; /* Ensure the height matches the logo box */
 }
 
 .content-box:hover {
@@ -114,15 +106,18 @@ p {
         font-size: 1.5rem;
     }
 
-    .content-box,
-    .logo-box {
+    .content-box {
         width: 90%;
         max-width: 300px;
     }
 
-    .logo {
-        width: 80%;
+    .logo-box {
+        width: 250px; /* Adjust for smaller screen sizes */
+        height: 250px; /* Adjust for smaller screen sizes */
     }
 }
+
+
+
 
 
