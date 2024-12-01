@@ -34,14 +34,14 @@ body {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
-    width: 350px; /* Increased fixed width */
-    height: 350px; /* Increased fixed height */
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
     overflow: hidden; /* Ensure any overflow is hidden */
 }
 
 .logo {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    width: 300px; /* Ensure consistent width */
+    height: 300px; /* Ensure consistent height */
     object-fit: contain; /* Maintain aspect ratio while fitting inside */
 }
 
@@ -115,9 +115,9 @@ p {
         width: 250px; /* Adjust for smaller screen sizes */
         height: 250px; /* Adjust for smaller screen sizes */
     }
+
+    .logo {
+        width: 250px; /* Adjust for smaller screen sizes */
+        height: 250px;
+    }
 }
-
-
-
-
-
